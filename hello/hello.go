@@ -9,6 +9,12 @@ func main() {
 		fmt.Println("world")
 	}()
 
+	hi := func() {
+		fmt.Println("holis")
+	}
+
+	go hi()
+
 }
 
 func hello() {
