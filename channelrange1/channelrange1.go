@@ -9,7 +9,7 @@ func main() {
 	intStream := make(chan int)
 
 	go func() {
-		defer close(intStream)
+		defer close(intStream) // This is a common pattern:
 		for i := 1; i <= 5; i++ {
 			if i == 3 {
 				time.Sleep(3 * time.Second)
