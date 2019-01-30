@@ -1,0 +1,14 @@
+var dataStream chan interface{}
+dataStream = make(chan interface{})
+
+Unidirectional channel (to read only):
+var dataStream <-chan interface{}
+dataStream := make(<-chan interface{})
+
+
+A channel that can only send:
+var dataStream chan<- interface{}
+dataStream := make(chan<- interface{})
+
+
+intStream := make(chan int)
