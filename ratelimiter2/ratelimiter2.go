@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"sort"
+	"time"
 
 	"golang.org/x/time/rate"
 )
@@ -34,6 +35,10 @@ func (l *multiLimiter) Wait(ctx context.Context) error {
 }
 
 func (l *multiLimiter) Limit() rate.Limit {
-	// Return the most restrictive limit.
+	// Return the most restrictive limit which is the first element after we sort.
 	return l.limiters[0].Limit()
+}
+
+func Per(eventCount int, duration time.Duration) rate.Limit {
+	return rate.Every(duration / time.Duration(eventCount))
 }

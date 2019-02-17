@@ -39,9 +39,4 @@ func main() {
 	}
 
 	wg.Wait()
-1. m. Nota de burla o de afrenta. Le puso el inri.
-
-para más, o mayor, inri
-
-1. locs. advs. Para mayor escarnio.
 }
